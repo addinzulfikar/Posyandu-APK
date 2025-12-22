@@ -1,0 +1,75 @@
+{
+  "balita": [
+    {
+      "id": "11111111-1111-1111-1111-111111111111",
+      "nama": "Ahmad Rizki",
+      "tanggalLahir": "2022-03-15",
+      "jenisKelamin": "Laki-laki",
+      "namaOrtu": "Siti Aminah",
+      "alamat": "Jl. Merdeka No. 12",
+      "noTelp": "08123456789",
+      "riwayatPenimbangan": [
+        {
+          "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+          "tanggal": "2024-11-01",
+          "usia": 32,
+          "beratBadan": 12.5,
+          "tinggiBadan": 85,
+          "statusBB": "Normal",
+          "statusTB": "Normal",
+          "kehadiran": true,
+          "createdAt": "2025-12-23T00:00:00.000Z"
+        }
+      ],
+      "createdAt": "2025-12-23T00:00:00.000Z",
+      "updatedAt": "2025-12-23T00:00:00.000Z"
+    }
+  ],
+  "ibuHamil": [
+    {
+      "id": "22222222-2222-2222-2222-222222222222",
+      "nama": "Rina Kusuma",
+      "tanggalLahir": "1995-06-10",
+      "alamat": "Jl. Melati No. 8",
+      "noTelp": "08111222333",
+      "usiaKehamilan": 7,
+      "riwayatPenimbangan": [
+        {
+          "id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+          "tanggal": "2024-11-01",
+          "beratBadan": 65,
+          "tinggiBadan": 158,
+          "tekananDarah": "120/80",
+          "kehadiran": true,
+          "createdAt": "2025-12-23T00:00:00.000Z"
+        }
+      ],
+      "createdAt": "2025-12-23T00:00:00.000Z",
+      "updatedAt": "2025-12-23T00:00:00.000Z"
+    }
+  ],
+  "lansia": [
+    {
+      "id": "33333333-3333-3333-3333-333333333333",
+      "nama": "Pak Slamet",
+      "tanggalLahir": "1950-12-05",
+      "jenisKelamin": "Laki-laki",
+      "alamat": "Jl. Dahlia No. 15",
+      "noTelp": "08555666777",
+      "riwayatPenimbangan": [
+        {
+          "id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+          "tanggal": "2024-11-01",
+          "beratBadan": 68,
+          "tinggiBadan": 165,
+          "tensi": "130/85",
+          "gulaDarah": 120,
+          "kehadiran": true,
+          "createdAt": "2025-12-23T00:00:00.000Z"
+        }
+      ],
+      "createdAt": "2025-12-23T00:00:00.000Z",
+      "updatedAt": "2025-12-23T00:00:00.000Z"
+    }
+  ]
+}
