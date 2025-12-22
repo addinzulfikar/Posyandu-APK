@@ -1,0 +1,335 @@
+{
+  "info": {
+    "_postman_id": "1e6637e5-9c50-4d40-9a1c-1e3f0dd1e0df",
+    "name": "Posyandu Digital API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /api/health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Balita",
+      "item": [
+        {
+          "name": "GET /api/balita",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/balita",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/balita",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Sari Dewi\",\n  \"tanggalLahir\": \"2021-08-22\",\n  \"jenisKelamin\": \"Perempuan\",\n  \"namaOrtu\": \"Budiman Santoso\",\n  \"alamat\": \"Jl. Kenanga No. 5\",\n  \"noTelp\": \"08987654321\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/balita",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  if (json && json.id) pm.environment.set('balitaId', json.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/balita/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/balita/{{balitaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita", "{{balitaId}}"]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/balita/:id",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"alamat\": \"Jl. Kenanga No. 5A\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/balita/{{balitaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita", "{{balitaId}}"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/balita/:id/penimbangan",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tanggal\": \"2025-12-23\",\n  \"usia\": 33,\n  \"beratBadan\": 12.8,\n  \"tinggiBadan\": 86,\n  \"statusBB\": \"Normal\",\n  \"statusTB\": \"Normal\",\n  \"kehadiran\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/balita/{{balitaId}}/penimbangan",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita", "{{balitaId}}", "penimbangan"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/balita/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/balita/{{balitaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "balita", "{{balitaId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ibu Hamil",
+      "item": [
+        {
+          "name": "GET /api/ibu-hamil",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/ibu-hamil",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Siti Nur\",\n  \"tanggalLahir\": \"1998-01-20\",\n  \"alamat\": \"Jl. Mawar No. 1\",\n  \"noTelp\": \"08120001111\",\n  \"usiaKehamilan\": 5\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  if (json && json.id) pm.environment.set('ibuHamilId', json.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/ibu-hamil/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil/{{ibuHamilId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil", "{{ibuHamilId}}"]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/ibu-hamil/:id",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usiaKehamilan\": 6\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil/{{ibuHamilId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil", "{{ibuHamilId}}"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/ibu-hamil/:id/penimbangan",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tanggal\": \"2025-12-23\",\n  \"beratBadan\": 66,\n  \"tinggiBadan\": 158,\n  \"tekananDarah\": \"120/80\",\n  \"kehadiran\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil/{{ibuHamilId}}/penimbangan",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil", "{{ibuHamilId}}", "penimbangan"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/ibu-hamil/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/ibu-hamil/{{ibuHamilId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "ibu-hamil", "{{ibuHamilId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lansia",
+      "item": [
+        {
+          "name": "GET /api/lansia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/lansia",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Bu Aminah\",\n  \"tanggalLahir\": \"1955-09-12\",\n  \"jenisKelamin\": \"Perempuan\",\n  \"alamat\": \"Jl. Anggrek No. 2\",\n  \"noTelp\": \"08550001111\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "  const json = pm.response.json();",
+                  "  if (json && json.id) pm.environment.set('lansiaId', json.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /api/lansia/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia/{{lansiaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia", "{{lansiaId}}"]
+            }
+          }
+        },
+        {
+          "name": "PUT /api/lansia/:id",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"alamat\": \"Jl. Anggrek No. 2B\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia/{{lansiaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia", "{{lansiaId}}"]
+            }
+          }
+        },
+        {
+          "name": "POST /api/lansia/:id/penimbangan",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tanggal\": \"2025-12-23\",\n  \"beratBadan\": 67,\n  \"tinggiBadan\": 164,\n  \"tensi\": \"130/85\",\n  \"gulaDarah\": 118,\n  \"kehadiran\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia/{{lansiaId}}/penimbangan",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia", "{{lansiaId}}", "penimbangan"]
+            }
+          }
+        },
+        {
+          "name": "DELETE /api/lansia/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lansia/{{lansiaId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "lansia", "{{lansiaId}}"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
